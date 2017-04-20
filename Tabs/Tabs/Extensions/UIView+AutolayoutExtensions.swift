@@ -641,6 +641,21 @@ public extension UIView {
         return constraint
     }
 
+    @discardableResult func horizontalSpaceToView(_ view: UIView, constant: CGFloat = 0, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
+        guard let superview = self.superview else {
+            preconditionFailure("view has no superview")
+        }
+        translatesAutoresizingMaskIntoConstraints = false
+        if view != superview {
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+
+        let constraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: constant)
+        constraint.priority = priority
+        superview.addConstraint(constraint)
+        return constraint
+    }
+
     @discardableResult func alignHorizontalCenter(withView view: UIView, withMultiplier multiplier: CGFloat = 1.0, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
         let constraint = NSLayoutConstraint(
             item: self, attribute: .centerX,
