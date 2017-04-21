@@ -9,13 +9,16 @@ class TabScrollViewController: UIViewController {
 
     private let buttonTab1 = UIButton()
     private let buttonTab2 = UIButton()
+    fileprivate let navBarHeight: CGFloat = 64.0
+
     fileprivate let topContainerView = UIView()
     fileprivate let tabContainerView = UIView()
     fileprivate let contentContainerView = UIView()
 
     fileprivate let maxTopViewY = CGFloat(0)
     fileprivate var topComponent: TabTopComponent!
-    fileprivate var viewControllers: [TabChildComponent]!
+    fileprivate var tabComponents: [TabChildComponent]!
+    fileprivate var selectedTabComponent: TabChildComponent!
 
     var topTopContainerViewConstraint: NSLayoutConstraint?
     var heightTopContainerViewConstraint: NSLayoutConstraint?
@@ -30,6 +33,8 @@ class TabScrollViewController: UIViewController {
 
     private func setupViews() {
 
+        automaticallyAdjustsScrollViewInsets = false
+
         topComponent = getTopComponent()
 
         let controller1 = Tab1ViewController()
@@ -38,12 +43,7 @@ class TabScrollViewController: UIViewController {
         let controller2 = Tab2ViewController()
         controller2.view.backgroundColor = .darkGray
 
-        viewControllers = [controller1, controller2]
-
-        for var viewController in viewControllers {
-            viewController.delegate = self
-            viewController.updateInset(inset: UIEdgeInsetsMake(topComponent.height, 0, 0, 0))
-        }
+        tabComponents = [controller1, controller2]
 
         topContainerView.backgroundColor = .red
         contentContainerView.backgroundColor = .yellow
@@ -59,9 +59,9 @@ class TabScrollViewController: UIViewController {
 
     private func setupHierarchy() {
 
+        view.addSubview(contentContainerView)
         view.addSubview(topContainerView)
         view.addSubview(tabContainerView)
-        view.addSubview(contentContainerView)
 
         tabContainerView.addSubview(buttonTab1)
         tabContainerView.addSubview(buttonTab2)
@@ -72,14 +72,15 @@ class TabScrollViewController: UIViewController {
         add(topComponent.viewController, to: topContainerView)
 
         let childComponent = getChildComponent(0)
-         add(childComponent.viewController, to: contentContainerView)
+        selectedTabComponent = childComponent
+        selectedTabComponent.delegate = self
+        add(selectedTabComponent.viewController, to: contentContainerView)
 
         topContainerView.pinToSuperview([.left, .right])
         topTopContainerViewConstraint = topContainerView.pinToSuperviewTop()
-        topContainerView.addHeightConstraint(withConstant: topComponent.height)
+        heightTopContainerViewConstraint = topContainerView.addHeightConstraint(withConstant: topComponent.height)
 
-        contentContainerView.attachToBottomOf(topContainerView)
-        contentContainerView.pinToSuperview([.left, .right, .bottom])
+        contentContainerView.pinToSuperviewEdges()
 
         tabContainerView.alpha = 0.7
         tabContainerView.backgroundColor = .white
@@ -96,15 +97,27 @@ class TabScrollViewController: UIViewController {
     //MARK: - Actions
 
     func tab1Tapped() {
-        remove(viewControllers[1].viewController)
-        add(viewControllers[0].viewController, to: contentContainerView)
+
+        selectTabComponent(tabComponents[0])
     }
 
     func tab2Tapped() {
-        remove(viewControllers[0].viewController)
-        add(viewControllers[1].viewController, to: contentContainerView)
+
+        selectTabComponent(tabComponents[1])
     }
 
+    private func selectTabComponent(_ tabComponent: TabChildComponent) {
+
+        selectedTabComponent.reset()
+        remove(selectedTabComponent.viewController)
+
+        topTopContainerViewConstraint?.constant = 0
+        heightTopContainerViewConstraint?.constant = topComponent.height
+
+        selectedTabComponent = tabComponent
+        selectedTabComponent.delegate = self
+        add(selectedTabComponent.viewController, to: contentContainerView)
+    }
 }
 
 extension TabScrollViewController: TabScrollViewControllerDelegate {
@@ -113,35 +126,33 @@ extension TabScrollViewController: TabScrollViewControllerDelegate {
 
         if offset <= 0 {
 
-            view.sendSubview(toBack: topContainerView)
-
             topTopContainerViewConstraint?.constant = 0
             heightTopContainerViewConstraint?.constant = topComponent.height + -offset
-
         } else {
 
-            let constant = min(offset, maxTopViewY)
-            view.bringSubview(toFront: topContainerView)
+            let constant = min(offset, topComponent.height - navBarHeight - tabContainerView.frame.height)
 
             topTopContainerViewConstraint?.constant = -constant
             heightTopContainerViewConstraint?.constant = topComponent.height
-
         }
+    }
 
-        view.bringSubview(toFront: tabContainerView)
+    func heightForTopComponent() -> CGFloat {
+
+        return topComponent.height
     }
 }
 
 extension TabScrollViewController: TabScrollViewNavigator {
 
     func getTopComponent() -> TabTopComponent {
+
         return TopViewController()
     }
 
     func getChildComponent(_ index: Int) -> TabChildComponent {
 
-        let childComponent: TabChildComponent = viewControllers[index]
-
+        let childComponent: TabChildComponent = tabComponents[index]
         return childComponent
     }
 }

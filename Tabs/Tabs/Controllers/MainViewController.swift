@@ -34,6 +34,5 @@ class MainViewController: UIViewController {
         let tabScrollViewController = TabScrollViewController()
         navigationController?.pushViewController(tabScrollViewController, animated: true)
     }
-
 }
 

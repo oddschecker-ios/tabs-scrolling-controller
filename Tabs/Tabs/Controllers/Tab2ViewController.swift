@@ -3,8 +3,10 @@ import UIKit
 
 class Tab2ViewController: UIViewController {
 
-    fileprivate let tableView = UITableView()
+    fileprivate let colorBlack = UIColor.red
+    fileprivate let colorGreen = UIColor.green
     weak var delegate: TabScrollViewControllerDelegate?
+    fileprivate let tableView = UITableView(frame: .zero, style: .grouped)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,17 +16,34 @@ class Tab2ViewController: UIViewController {
         setupConstraints()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        tableView.delegate = self
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        tableView.delegate = nil
+    }
+
     private func setupViews() {
+
+        automaticallyAdjustsScrollViewInsets = false
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "id")
     }
 
     private func setupHierarchy() {
+
         view.addSubview(tableView)
     }
 
     private func setupConstraints() {
+
         tableView.pinToSuperviewEdges()
     }
 }
@@ -32,11 +51,15 @@ class Tab2ViewController: UIViewController {
 extension Tab2ViewController: TabChildComponent {
 
     var viewController: UIViewController {
+
         return self
     }
 
-    func updateInset(inset: UIEdgeInsets) {
-        tableView.contentInset = inset
+    func reset() {
+
+        delegate = nil
+        tableView.delegate = nil
+        tableView.setContentOffset(.zero, animated: false)
     }
 }
 
@@ -50,12 +73,19 @@ extension Tab2ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "id", for: indexPath)
+        cell.textLabel?.text = indexPath.row.description
 
-        cell.textLabel?.text = NSLocalizedString("UITableViewCell", comment: "")
+        let percentage = CGFloat(indexPath.row) / CGFloat(30 - 1)
+        cell.backgroundColor = fadeFromColor(colorBlack, toColor:colorGreen, withPercentage:percentage)
 
         return cell
+    }
 
-    }    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+
+        let height = delegate?.heightForTopComponent() ?? 0
+        return height
+    }
 }
 
 extension Tab2ViewController: UITableViewDelegate {
