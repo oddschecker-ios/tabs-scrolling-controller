@@ -10,5 +10,4 @@ class TopViewController: UIViewController, TabTopComponent {
     var viewController: UIViewController {
         return self
     }
-
 }

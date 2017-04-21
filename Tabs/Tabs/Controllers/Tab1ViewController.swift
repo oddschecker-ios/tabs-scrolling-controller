@@ -3,8 +3,8 @@ import UIKit
 
 class Tab1ViewController: UIViewController {
 
-
     weak var delegate: TabScrollViewControllerDelegate?
+    fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,14 +12,23 @@ class Tab1ViewController: UIViewController {
         setupViews()
         setupHierarchy()
         setupConstraints()
+        collectionView.reloadData()
     }
 
-    private func setupViews() {}
+    private func setupViews() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .white
+        collectionView.register(TabUICollectionViewCell.self, forCellWithReuseIdentifier: "id")
+    }
 
-    private func setupHierarchy() {}
+    private func setupHierarchy() {
+        view.addSubview(collectionView)
+    }
 
-    private func setupConstraints() {}
-
+    private func setupConstraints() {
+        collectionView.pinToSuperviewEdges()
+    }
 }
 
 extension Tab1ViewController: TabChildComponent {
@@ -28,9 +37,12 @@ extension Tab1ViewController: TabChildComponent {
         return self
     }
 
+    func updateInset(inset: UIEdgeInsets) {
+        collectionView.contentInset = inset
+    }
 }
 
-extension Tab1ViewController: UICollectionViewDataSource {
+extension Tab1ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
@@ -39,9 +51,15 @@ extension Tab1ViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "id", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "id", for: indexPath) as! TabUICollectionViewCell
+
+        return cell
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: collectionView.frame.width, height: 60)
+    }
 }
 
 extension Tab1ViewController: UICollectionViewDelegate {
@@ -50,5 +68,4 @@ extension Tab1ViewController: UICollectionViewDelegate {
 
         delegate?.scrollDidScroll(offset: scrollView.contentOffset.y)
     }
-
 }

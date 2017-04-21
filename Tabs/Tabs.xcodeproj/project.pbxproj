@@ -21,6 +21,7 @@
 		2F4A0FF51EA906B8006FADEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FF41EA906B8006FADEA /* AppDelegate.swift */; };
 		2F4A10031EA91620006FADEA /* TabChildComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A10021EA91620006FADEA /* TabChildComponent.swift */; };
 		2F4A10051EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A10041EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift */; };
+		2F4A10071EAA15BD006FADEA /* TabUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A10061EAA15BD006FADEA /* TabUICollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2F4A0FF41EA906B8006FADEA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F4A10021EA91620006FADEA /* TabChildComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabChildComponent.swift; sourceTree = "<group>"; };
 		2F4A10041EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabScrollViewControllerDelegate.swift; sourceTree = "<group>"; };
+		2F4A10061EAA15BD006FADEA /* TabUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabUICollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				2F4A0FD51EA8FA59006FADEA /* TopViewController.swift */,
 				2F4A0FD61EA8FA59006FADEA /* MainViewController.swift */,
 				2F4A0FD71EA8FA59006FADEA /* Tab1ViewController.swift */,
+				2F4A10061EAA15BD006FADEA /* TabUICollectionViewCell.swift */,
 				2F4A0FD81EA8FA59006FADEA /* Tab2ViewController.swift */,
 				2F4A0FD91EA8FA59006FADEA /* TabScrollViewController.swift */,
 				2F4A10041EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift */,
@@ -251,6 +254,7 @@
 				2F4A0FDF1EA8FA59006FADEA /* Tab1ViewController.swift in Sources */,
 				2F4A10031EA91620006FADEA /* TabChildComponent.swift in Sources */,
 				2F4A10051EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift in Sources */,
+				2F4A10071EAA15BD006FADEA /* TabUICollectionViewCell.swift in Sources */,
 				2F4A0FE11EA8FA59006FADEA /* TabScrollViewController.swift in Sources */,
 				2F4A0FF51EA906B8006FADEA /* AppDelegate.swift in Sources */,
 				2F4A0FDD1EA8FA59006FADEA /* TopViewController.swift in Sources */,
