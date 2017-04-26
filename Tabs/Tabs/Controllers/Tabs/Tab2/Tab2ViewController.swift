@@ -35,6 +35,7 @@ class Tab2ViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "id")
     }
 

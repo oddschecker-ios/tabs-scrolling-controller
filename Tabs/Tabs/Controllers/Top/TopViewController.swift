@@ -10,4 +10,10 @@ class TopViewController: UIViewController, TabsTopComponent {
     var viewController: UIViewController {
         return self
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = .black
+    }
 }

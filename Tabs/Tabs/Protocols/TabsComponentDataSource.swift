@@ -3,6 +3,6 @@ import CoreGraphics
 
 protocol TabsComponentDataSource: class {
 
-    func heightForTopComponent() -> CGFloat
     func collapsedTopOffset() -> CGFloat
+    func heightForTopComponent() -> CGFloat
 }

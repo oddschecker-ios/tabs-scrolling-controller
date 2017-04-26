@@ -134,6 +134,4 @@ extension TabsComponentViewController: TabsComponentDataSource {
 
         return navBarHeight + selectorComponent.height
     }
-
 }
-

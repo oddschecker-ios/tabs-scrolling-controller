@@ -138,8 +138,8 @@
 		2F4A0FDA1EA8FA59006FADEA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2F4A0FDB1EA8FA59006FADEA /* UIView+AutolayoutExtensions.swift */,
 				2F4A0FE61EA9045D006FADEA /* UIViewController+Helpers.swift */,
+				2F4A0FDB1EA8FA59006FADEA /* UIView+AutolayoutExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -147,12 +147,12 @@
 		2F4A0FDC1EA8FA59006FADEA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				2F77DD6D1EB09DF60028C30B /* TabsChildComponent.swift */,
-				2F77DD6E1EB09DF60028C30B /* TabsComponentDataSource.swift */,
-				2F77DD6F1EB09DF60028C30B /* TabsComponentDelegate.swift */,
-				2F77DD701EB09DF60028C30B /* TabsSelectorComponent.swift */,
-				2F77DD711EB09DF60028C30B /* TabsSelectorDelegate.swift */,
 				2F77DD721EB09DF60028C30B /* TabsTopComponent.swift */,
+				2F77DD6D1EB09DF60028C30B /* TabsChildComponent.swift */,
+				2F77DD711EB09DF60028C30B /* TabsSelectorDelegate.swift */,
+				2F77DD701EB09DF60028C30B /* TabsSelectorComponent.swift */,
+				2F77DD6F1EB09DF60028C30B /* TabsComponentDelegate.swift */,
+				2F77DD6E1EB09DF60028C30B /* TabsComponentDataSource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -177,8 +177,8 @@
 		2F77DD821EB0A2400028C30B /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
-				2F77DD831EB0A2400028C30B /* Tab1CollectionViewCell.swift */,
 				2F77DD841EB0A2400028C30B /* Tab1ViewController.swift */,
+				2F77DD831EB0A2400028C30B /* Tab1CollectionViewCell.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
