@@ -1,11 +1,9 @@
-
 import UIKit
 import Foundation
 import CoreGraphics
 
-protocol TabTopComponent  {
+protocol TabsTopComponent {
 
     var height: CGFloat { get }
     var viewController: UIViewController { get }
-
 }

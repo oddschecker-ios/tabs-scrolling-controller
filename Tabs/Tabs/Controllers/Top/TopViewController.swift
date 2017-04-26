@@ -1,7 +1,7 @@
 
 import UIKit
 
-class TopViewController: UIViewController, TabTopComponent {
+class TopViewController: UIViewController, TabsTopComponent {
 
     var height: CGFloat {
         return 300

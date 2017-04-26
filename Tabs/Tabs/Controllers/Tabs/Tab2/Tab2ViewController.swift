@@ -5,7 +5,8 @@ class Tab2ViewController: UIViewController {
 
     fileprivate let colorBlack = UIColor.red
     fileprivate let colorGreen = UIColor.green
-    weak var delegate: TabScrollViewControllerDelegate?
+    weak var tabsDelegate: TabsComponentDelegate?
+    weak var tabsDataSource: TabsComponentDataSource?
     fileprivate let tableView = UITableView(frame: .zero, style: .grouped)
 
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ class Tab2ViewController: UIViewController {
     }
 }
 
-extension Tab2ViewController: TabChildComponent {
+extension Tab2ViewController: TabsChildComponent {
 
     var viewController: UIViewController {
 
@@ -57,7 +58,7 @@ extension Tab2ViewController: TabChildComponent {
 
     func reset() {
 
-        delegate = nil
+        tabsDelegate = nil
         tableView.delegate = nil
         tableView.setContentOffset(.zero, animated: false)
     }
@@ -83,7 +84,7 @@ extension Tab2ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 
-        let height = delegate?.heightForTopComponent() ?? 0
+        let height = tabsDataSource?.heightForTopComponent() ?? 0
         return height
     }
 }
@@ -92,6 +93,6 @@ extension Tab2ViewController: UITableViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
-        delegate?.scrollDidScroll(offset: scrollView.contentOffset.y)
+        tabsDelegate?.scrollDidScroll(offset: scrollView.contentOffset.y)
     }
 }

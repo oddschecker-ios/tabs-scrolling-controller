@@ -7,7 +7,8 @@ class Tab1ViewController: UIViewController {
     fileprivate let colorBlack = UIColor.green
     fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
-    weak var delegate: TabScrollViewControllerDelegate?
+    weak var tabsDelegate: TabsComponentDelegate?
+    weak var tabsDataSource: TabsComponentDataSource?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class Tab1ViewController: UIViewController {
 
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
-        collectionView.register(TabUICollectionViewCell.self, forCellWithReuseIdentifier: "id")
+        collectionView.register(Tab1CollectionViewCell.self, forCellWithReuseIdentifier: "id")
     }
 
     private func setupHierarchy() {
@@ -48,7 +49,7 @@ class Tab1ViewController: UIViewController {
     }
 }
 
-extension Tab1ViewController: TabChildComponent {
+extension Tab1ViewController: TabsChildComponent {
 
     var viewController: UIViewController {
 
@@ -57,7 +58,7 @@ extension Tab1ViewController: TabChildComponent {
 
     func reset() {
 
-        delegate = nil
+        tabsDelegate = nil
         collectionView.delegate = nil
         collectionView.setContentOffset(.zero, animated: false)
     }
@@ -72,7 +73,7 @@ extension Tab1ViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "id", for: indexPath) as! TabUICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "id", for: indexPath) as! Tab1CollectionViewCell
 
         cell.titleLabel.text = indexPath.row.description
 
@@ -87,7 +88,7 @@ extension Tab1ViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 
-        let height = delegate?.heightForTopComponent() ?? 0
+        let height = tabsDataSource?.heightForTopComponent() ?? 0
 
         let size = CGSize(width: collectionView.frame.width, height: height)
         return size
@@ -118,6 +119,6 @@ extension Tab1ViewController: UICollectionViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
-        delegate?.scrollDidScroll(offset: scrollView.contentOffset.y)
+        tabsDelegate?.scrollDidScroll(offset: scrollView.contentOffset.y)
     }
 }

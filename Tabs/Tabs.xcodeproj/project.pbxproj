@@ -10,18 +10,22 @@
 		2F4A0F941EA8C8C2006FADEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4A0F931EA8C8C2006FADEA /* Assets.xcassets */; };
 		2F4A0F971EA8C8C2006FADEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F4A0F951EA8C8C2006FADEA /* LaunchScreen.storyboard */; };
 		2F4A0FA21EA8C8C2006FADEA /* TabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FA11EA8C8C2006FADEA /* TabsTests.swift */; };
-		2F4A0FDD1EA8FA59006FADEA /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FD51EA8FA59006FADEA /* TopViewController.swift */; };
 		2F4A0FDE1EA8FA59006FADEA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FD61EA8FA59006FADEA /* MainViewController.swift */; };
-		2F4A0FDF1EA8FA59006FADEA /* Tab1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FD71EA8FA59006FADEA /* Tab1ViewController.swift */; };
-		2F4A0FE01EA8FA59006FADEA /* Tab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FD81EA8FA59006FADEA /* Tab2ViewController.swift */; };
-		2F4A0FE11EA8FA59006FADEA /* TabScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FD91EA8FA59006FADEA /* TabScrollViewController.swift */; };
 		2F4A0FE21EA8FA59006FADEA /* UIView+AutolayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FDB1EA8FA59006FADEA /* UIView+AutolayoutExtensions.swift */; };
-		2F4A0FE41EA90064006FADEA /* TabTopComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FE31EA90064006FADEA /* TabTopComponent.swift */; };
 		2F4A0FE71EA9045D006FADEA /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FE61EA9045D006FADEA /* UIViewController+Helpers.swift */; };
 		2F4A0FF51EA906B8006FADEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A0FF41EA906B8006FADEA /* AppDelegate.swift */; };
-		2F4A10031EA91620006FADEA /* TabChildComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A10021EA91620006FADEA /* TabChildComponent.swift */; };
-		2F4A10051EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A10041EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift */; };
-		2F4A10071EAA15BD006FADEA /* TabUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A10061EAA15BD006FADEA /* TabUICollectionViewCell.swift */; };
+		2F77DD6C1EB09DED0028C30B /* TabsComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD6B1EB09DED0028C30B /* TabsComponentViewController.swift */; };
+		2F77DD731EB09DF60028C30B /* TabsChildComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD6D1EB09DF60028C30B /* TabsChildComponent.swift */; };
+		2F77DD741EB09DF60028C30B /* TabsComponentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD6E1EB09DF60028C30B /* TabsComponentDataSource.swift */; };
+		2F77DD751EB09DF60028C30B /* TabsComponentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD6F1EB09DF60028C30B /* TabsComponentDelegate.swift */; };
+		2F77DD761EB09DF60028C30B /* TabsSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD701EB09DF60028C30B /* TabsSelectorComponent.swift */; };
+		2F77DD771EB09DF60028C30B /* TabsSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD711EB09DF60028C30B /* TabsSelectorDelegate.swift */; };
+		2F77DD781EB09DF60028C30B /* TabsTopComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD721EB09DF60028C30B /* TabsTopComponent.swift */; };
+		2F77DD891EB0A2400028C30B /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD801EB0A2400028C30B /* SelectorViewController.swift */; };
+		2F77DD8A1EB0A2400028C30B /* Tab1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD831EB0A2400028C30B /* Tab1CollectionViewCell.swift */; };
+		2F77DD8B1EB0A2400028C30B /* Tab1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD841EB0A2400028C30B /* Tab1ViewController.swift */; };
+		2F77DD8C1EB0A2400028C30B /* Tab2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD861EB0A2400028C30B /* Tab2ViewController.swift */; };
+		2F77DD8D1EB0A2400028C30B /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77DD881EB0A2400028C30B /* TopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,18 +46,22 @@
 		2F4A0F9D1EA8C8C2006FADEA /* TabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4A0FA11EA8C8C2006FADEA /* TabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTests.swift; sourceTree = "<group>"; };
 		2F4A0FA31EA8C8C2006FADEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F4A0FD51EA8FA59006FADEA /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		2F4A0FD61EA8FA59006FADEA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		2F4A0FD71EA8FA59006FADEA /* Tab1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab1ViewController.swift; sourceTree = "<group>"; };
-		2F4A0FD81EA8FA59006FADEA /* Tab2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab2ViewController.swift; sourceTree = "<group>"; };
-		2F4A0FD91EA8FA59006FADEA /* TabScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabScrollViewController.swift; sourceTree = "<group>"; };
 		2F4A0FDB1EA8FA59006FADEA /* UIView+AutolayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutolayoutExtensions.swift"; sourceTree = "<group>"; };
-		2F4A0FE31EA90064006FADEA /* TabTopComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabTopComponent.swift; sourceTree = "<group>"; };
 		2F4A0FE61EA9045D006FADEA /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		2F4A0FF41EA906B8006FADEA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F4A10021EA91620006FADEA /* TabChildComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabChildComponent.swift; sourceTree = "<group>"; };
-		2F4A10041EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabScrollViewControllerDelegate.swift; sourceTree = "<group>"; };
-		2F4A10061EAA15BD006FADEA /* TabUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabUICollectionViewCell.swift; sourceTree = "<group>"; };
+		2F77DD6B1EB09DED0028C30B /* TabsComponentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsComponentViewController.swift; sourceTree = "<group>"; };
+		2F77DD6D1EB09DF60028C30B /* TabsChildComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsChildComponent.swift; sourceTree = "<group>"; };
+		2F77DD6E1EB09DF60028C30B /* TabsComponentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsComponentDataSource.swift; sourceTree = "<group>"; };
+		2F77DD6F1EB09DF60028C30B /* TabsComponentDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsComponentDelegate.swift; sourceTree = "<group>"; };
+		2F77DD701EB09DF60028C30B /* TabsSelectorComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsSelectorComponent.swift; sourceTree = "<group>"; };
+		2F77DD711EB09DF60028C30B /* TabsSelectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsSelectorDelegate.swift; sourceTree = "<group>"; };
+		2F77DD721EB09DF60028C30B /* TabsTopComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsTopComponent.swift; sourceTree = "<group>"; };
+		2F77DD801EB0A2400028C30B /* SelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorViewController.swift; sourceTree = "<group>"; };
+		2F77DD831EB0A2400028C30B /* Tab1CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab1CollectionViewCell.swift; sourceTree = "<group>"; };
+		2F77DD841EB0A2400028C30B /* Tab1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab1ViewController.swift; sourceTree = "<group>"; };
+		2F77DD861EB0A2400028C30B /* Tab2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab2ViewController.swift; sourceTree = "<group>"; };
+		2F77DD881EB0A2400028C30B /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,13 +126,11 @@
 		2F4A0FD41EA8FA59006FADEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2F4A0FD51EA8FA59006FADEA /* TopViewController.swift */,
 				2F4A0FD61EA8FA59006FADEA /* MainViewController.swift */,
-				2F4A0FD71EA8FA59006FADEA /* Tab1ViewController.swift */,
-				2F4A10061EAA15BD006FADEA /* TabUICollectionViewCell.swift */,
-				2F4A0FD81EA8FA59006FADEA /* Tab2ViewController.swift */,
-				2F4A0FD91EA8FA59006FADEA /* TabScrollViewController.swift */,
-				2F4A10041EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift */,
+				2F77DD7F1EB0A2400028C30B /* Selector */,
+				2F77DD811EB0A2400028C30B /* Tabs */,
+				2F77DD871EB0A2400028C30B /* Top */,
+				2F77DD6B1EB09DED0028C30B /* TabsComponentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,10 +147,56 @@
 		2F4A0FDC1EA8FA59006FADEA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				2F4A0FE31EA90064006FADEA /* TabTopComponent.swift */,
-				2F4A10021EA91620006FADEA /* TabChildComponent.swift */,
+				2F77DD6D1EB09DF60028C30B /* TabsChildComponent.swift */,
+				2F77DD6E1EB09DF60028C30B /* TabsComponentDataSource.swift */,
+				2F77DD6F1EB09DF60028C30B /* TabsComponentDelegate.swift */,
+				2F77DD701EB09DF60028C30B /* TabsSelectorComponent.swift */,
+				2F77DD711EB09DF60028C30B /* TabsSelectorDelegate.swift */,
+				2F77DD721EB09DF60028C30B /* TabsTopComponent.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2F77DD7F1EB0A2400028C30B /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				2F77DD801EB0A2400028C30B /* SelectorViewController.swift */,
+			);
+			path = Selector;
+			sourceTree = "<group>";
+		};
+		2F77DD811EB0A2400028C30B /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				2F77DD821EB0A2400028C30B /* Tab1 */,
+				2F77DD851EB0A2400028C30B /* Tab2 */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		2F77DD821EB0A2400028C30B /* Tab1 */ = {
+			isa = PBXGroup;
+			children = (
+				2F77DD831EB0A2400028C30B /* Tab1CollectionViewCell.swift */,
+				2F77DD841EB0A2400028C30B /* Tab1ViewController.swift */,
+			);
+			path = Tab1;
+			sourceTree = "<group>";
+		};
+		2F77DD851EB0A2400028C30B /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				2F77DD861EB0A2400028C30B /* Tab2ViewController.swift */,
+			);
+			path = Tab2;
+			sourceTree = "<group>";
+		};
+		2F77DD871EB0A2400028C30B /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				2F77DD881EB0A2400028C30B /* TopViewController.swift */,
+			);
+			path = Top;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +249,7 @@
 				TargetAttributes = {
 					2F4A0F881EA8C8C2006FADEA = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = D9FQ8TX4HK;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -250,18 +303,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F4A0FE41EA90064006FADEA /* TabTopComponent.swift in Sources */,
-				2F4A0FDF1EA8FA59006FADEA /* Tab1ViewController.swift in Sources */,
-				2F4A10031EA91620006FADEA /* TabChildComponent.swift in Sources */,
-				2F4A10051EA91CB9006FADEA /* TabScrollViewControllerDelegate.swift in Sources */,
-				2F4A10071EAA15BD006FADEA /* TabUICollectionViewCell.swift in Sources */,
-				2F4A0FE11EA8FA59006FADEA /* TabScrollViewController.swift in Sources */,
+				2F77DD8B1EB0A2400028C30B /* Tab1ViewController.swift in Sources */,
+				2F77DD751EB09DF60028C30B /* TabsComponentDelegate.swift in Sources */,
+				2F77DD771EB09DF60028C30B /* TabsSelectorDelegate.swift in Sources */,
+				2F77DD6C1EB09DED0028C30B /* TabsComponentViewController.swift in Sources */,
+				2F77DD8D1EB0A2400028C30B /* TopViewController.swift in Sources */,
+				2F77DD741EB09DF60028C30B /* TabsComponentDataSource.swift in Sources */,
 				2F4A0FF51EA906B8006FADEA /* AppDelegate.swift in Sources */,
-				2F4A0FDD1EA8FA59006FADEA /* TopViewController.swift in Sources */,
 				2F4A0FE71EA9045D006FADEA /* UIViewController+Helpers.swift in Sources */,
+				2F77DD731EB09DF60028C30B /* TabsChildComponent.swift in Sources */,
+				2F77DD8C1EB0A2400028C30B /* Tab2ViewController.swift in Sources */,
 				2F4A0FE21EA8FA59006FADEA /* UIView+AutolayoutExtensions.swift in Sources */,
 				2F4A0FDE1EA8FA59006FADEA /* MainViewController.swift in Sources */,
-				2F4A0FE01EA8FA59006FADEA /* Tab2ViewController.swift in Sources */,
+				2F77DD781EB09DF60028C30B /* TabsTopComponent.swift in Sources */,
+				2F77DD8A1EB0A2400028C30B /* Tab1CollectionViewCell.swift in Sources */,
+				2F77DD761EB09DF60028C30B /* TabsSelectorComponent.swift in Sources */,
+				2F77DD891EB0A2400028C30B /* SelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = D9FQ8TX4HK;
 				INFOPLIST_FILE = Tabs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrescastano.Tabs;
@@ -407,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = D9FQ8TX4HK;
 				INFOPLIST_FILE = Tabs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrescastano.Tabs;
