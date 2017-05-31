@@ -23,7 +23,7 @@ class TabsComponentViewController: UIViewController {
     init(tabsTopComponent: TabsTopComponent, tabsSelectorComponent: TabsSelectorComponent, tabsChildComponents: [TabsChildComponent]) {
 
         guard tabsChildComponents.count != 0 else {
-            preconditionFailure("No tabs added")
+            preconditionFailure("No tabs added restes")
         }
 
         topComponent = tabsTopComponent
